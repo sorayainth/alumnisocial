@@ -16,7 +16,10 @@
     <link href="<?php echo base_url('assets/css/style.css');?>" rel="stylesheet">
     <!-- plugin -->
     <link href="<?php echo base_url('assets/css/plugins/dataTables/datatables.min.css');?>" rel="stylesheet">
-
+    <link href="<?php echo base_url('assets/css/plugins/iCheck/custom.css');?>" rel="stylesheet">
+    <!-- Sweet Alert -->
+    <link href="<?php echo base_url('assets/css/plugins/sweetalert/sweetalert.css');?>" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
 </head>
 
 <body>
@@ -28,37 +31,44 @@
             <ul class="nav metismenu" id="side-menu">
                 <li class="nav-header">
                     <div class="dropdown profile-element"> <span>
-                            <img alt="image" class="img-circle" src="img/profile_small.jpg" />
+                            <img alt="image" class="img-circle" src="<?php  echo base_url('assets/img/logo.png');?>" height="80"/>
                              </span>
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">David Williams</strong>
-                             </span> <span class="text-muted text-xs block">Art Director <b class="caret"></b></span> </span> </a>
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold"><?php echo $this->session->userdata('FULLNAME');?></strong>
+                             </span> <span class="text-muted text-xs block"><?php echo $this->session->userdata('username');?> <b class="caret"></b></span> </span> </a>
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                            <li><a href="profile.html">Profile</a></li>
-                            <li><a href="contacts.html">Contacts</a></li>
-                            <li><a href="mailbox.html">Mailbox</a></li>
-                            <li class="divider"></li>
-                            <li><a href="login.html">Logout</a></li>
+                            <li><a href="<?php echo base_url('auth/logout');?>">Logout</a></li>
                         </ul>
                     </div>
                     <div class="logo-element">
                         IN+
                     </div>
                 </li>
+                <?php if($this->session->userdata('Admin')){ ?>
                 <li>
-                    <a href="<?php echo base_url('main/index');?>"><i class="fa fa-th-large"></i> <span class="nav-label"> Dashboard</span></a>
+                    <a href="<?php echo base_url('main/dashboard');?>"><i class="fa fa-th-large"></i> <span class="nav-label"> Dashboard</span></a>
                 </li>
+            <?php } ?>
 
                 <li>
-                    <a href="<?php echo base_url('main/form');?>"><i class="fa fa-pie-chart"></i> <span class="nav-label">กรอกข้อมูล</span></a>
+                    <a href="<?php echo base_url('main/form');?>"><i class="fa fa-pie-chart"></i> <span class="nav-label">กรอกข้อมูล</span>
+                    </a>
                 </li>
- 
+                <?php if($this->main_model->checkform() == true){ ?>
+                <li>
+                    <a href="<?php echo base_url('main/print_report');?>"><i class="fa fa-print"></i> <span class="nav-label">พิมพ์แบบฟอร์ม</span>
+                    </a>
+                </li>
+            <?php  } ?>
+            <?php if($this->session->userdata('Admin')){ ?>
                 <li>
                     <a href="#"><i class="fa fa-table"></i> <span class="nav-label">ข้อมูลศิษย์เก่า</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
-                        <li><a href="<?php echo base_url('main/table_data');?>">ตารางรายชื่อ</a></li>
+                        <li><a href="<?php echo base_url('main/table_student_info');?>">ตารางรายชื่อ</a></li>
+                        <li><a href="<?php echo base_url('main/table_data');?>">ข้อมูลการมีงานทำ</a></li>
                     </ul>
                 </li>
+            <?php } ?>
             </ul>
 
         </div>
@@ -77,111 +87,14 @@
         </div>
             <ul class="nav navbar-top-links navbar-right">
                 <li>
-                    <span class="m-r-sm text-muted welcome-message">Welcome to INSPINIA+ Admin Theme.</span>
+                    <span class="m-r-sm text-muted welcome-message">Welcome <?php echo $this->session->userdata('FULLNAME');?></span>
                 </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-                        <i class="fa fa-envelope"></i>  <span class="label label-warning">16</span>
-                    </a>
-                    <ul class="dropdown-menu dropdown-messages">
-                        <li>
-                            <div class="dropdown-messages-box">
-                                <a href="profile.html" class="pull-left">
-                                    <img alt="image" class="img-circle" src="img/a7.jpg">
-                                </a>
-                                <div class="media-body">
-                                    <small class="pull-right">46h ago</small>
-                                    <strong>Mike Loreipsum</strong> started following <strong>Monica Smith</strong>. <br>
-                                    <small class="text-muted">3 days ago at 7:58 pm - 10.06.2014</small>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <div class="dropdown-messages-box">
-                                <a href="profile.html" class="pull-left">
-                                    <img alt="image" class="img-circle" src="img/a4.jpg">
-                                </a>
-                                <div class="media-body ">
-                                    <small class="pull-right text-navy">5h ago</small>
-                                    <strong>Chris Johnatan Overtunk</strong> started following <strong>Monica Smith</strong>. <br>
-                                    <small class="text-muted">Yesterday 1:21 pm - 11.06.2014</small>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <div class="dropdown-messages-box">
-                                <a href="profile.html" class="pull-left">
-                                    <img alt="image" class="img-circle" src="img/profile.jpg">
-                                </a>
-                                <div class="media-body ">
-                                    <small class="pull-right">23h ago</small>
-                                    <strong>Monica Smith</strong> love <strong>Kim Smith</strong>. <br>
-                                    <small class="text-muted">2 days ago at 2:30 am - 11.06.2014</small>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <div class="text-center link-block">
-                                <a href="mailbox.html">
-                                    <i class="fa fa-envelope"></i> <strong>Read All Messages</strong>
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-                        <i class="fa fa-bell"></i>  <span class="label label-primary">8</span>
-                    </a>
-                    <ul class="dropdown-menu dropdown-alerts">
-                        <li>
-                            <a href="mailbox.html">
-                                <div>
-                                    <i class="fa fa-envelope fa-fw"></i> You have 16 messages
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="profile.html">
-                                <div>
-                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
-                                    <span class="pull-right text-muted small">12 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="grid_options.html">
-                                <div>
-                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <div class="text-center link-block">
-                                <a href="notifications.html">
-                                    <strong>See All Alerts</strong>
-                                    <i class="fa fa-angle-right"></i>
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                </li>
-
 
                 <li>
-                    <a href="login.html">
+                    <a href="<?php echo base_url('auth/logout');?>">
                         <i class="fa fa-sign-out"></i> Log out
                     </a>
                 </li>
             </ul>
-
         </nav>
         </div>

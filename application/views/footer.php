@@ -1,16 +1,14 @@
        <div class="footer">
             <div class="pull-right">
-                10GB of <strong>250GB</strong> Free.
+               งานกิจการนิสิตและศิษย์เก่าสัมพันธ์
             </div>
             <div>
-                <strong>Copyright</strong> Example Company &copy; 2014-2017
+                <strong>สำนักงานเลขานุการ</strong> &copy; 2019
             </div>
         </div>
 
         </div>
         </div>
-
-
 
     <!-- Mainly scripts -->
     <script src="<?php echo base_url('assets/js/jquery-3.1.1.min.js');?>"></script>
@@ -30,6 +28,24 @@
 
     <!-- plugin -->
     <script src="<?php echo base_url('assets/js/plugins/dataTables/datatables.min.js');?>"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="<?php echo base_url('assets/js/inspinia.js');?>"></script>
+    <script src="<?php echo base_url('assets/js/plugins/pace/pace.min.js');?>"></script>
+
+    <!-- Sweet alert -->
+    <script src="<?php echo base_url('assets/js/plugins/sweetalert/sweetalert.min.js');?>"></script>
+
+    <!-- iCheck -->
+    <script src="<?php echo base_url('assets/js/plugins/iCheck/icheck.min.js');?>"></script>
+        <script>
+            $(document).ready(function () {
+                $('.i-checks').iCheck({
+                    checkboxClass: 'icheckbox_square-green',
+                    radioClass: 'iradio_square-green',
+                });
+            });
+        </script>
 
     <!-- Page-Level Scripts -->
     <script>
@@ -142,7 +158,48 @@
                     });
        });
     </script>
+    <script type="text/javascript">
 
+     function chkstatus(sx){
+
+      if (sx=="ทำงาน"){
+          document.getElementById('job').style.display='block';
+          document.getElementById('chkstatus').style.display='block';
+          document.getElementById('edu').style.display='none';
+          document.getElementById('business').style.display='none';
+          document.getElementById('null').style.display='none';
+
+      } else if (sx=="ศึกษาต่อ") {
+          document.getElementById('edu').style.display='block';
+          document.getElementById('chkstatus').style.display='block';
+          document.getElementById('job').style.display='none';
+          document.getElementById('business').style.display='none';
+          document.getElementById('null').style.display='none';
+      } else if (sx=="ธุรกิจส่วนตัว") {
+          document.getElementById('business').style.display='block';
+          document.getElementById('chkstatus').style.display='block';
+          document.getElementById('job').style.display='none';
+          document.getElementById('edu').style.display='none';
+          document.getElementById('null').style.display='none';
+
+      } else if (sx=="ยังไม่ได้ทำงาน") {
+          document.getElementById('null').style.display='block';
+          document.getElementById('chkstatus').style.display='block';
+          document.getElementById('job').style.display='none';
+          document.getElementById('edu').style.display='none';
+          document.getElementById('business').style.display='none';
+
+      } else  {
+            document.getElementById('null').style.display='none';
+          document.getElementById('chkstatus').style.display='block';
+          document.getElementById('job').style.display='none';
+          document.getElementById('edu').style.display='none';
+          document.getElementById('business').style.display='none';
+      }
+
+    }
+    </script>
+    <?php echo $this->session->flashdata('flashSuccess')?>
 </body>
 
 </html>

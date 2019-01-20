@@ -3,31 +3,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Main extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('main_model');
+        $this->load->model('insert_model');
+        $this->load->model('alert_model');
+        $this->load->library('session');
+
+        // $this->member_model->checksession();
+
+    }
+
 	public function index()
 	{
-    	$data['main_content'] = 'index';	
-    	// $data['query'] = $this->main_model->view_course_register_model();
-    	$this->load->view('template', $data);
+        $this->load->view('login');
 	}
 
-	public function login()
+	public function dashboard()
 	{
-		$this->load->view('login');
+        $data['main_content'] = 'index';    
+        // $data['query'] = $this->main_model->view_course_register_model();
+        $this->load->view('template', $data);
 	}
 
 	public function form()
@@ -39,7 +36,40 @@ class Main extends CI_Controller {
 	public function table_data()
 	{
     	$data['main_content'] = 'table_data';	
+    	$data['query'] = $this->main_model->get_user();
     	$this->load->view('template', $data);
 	}
+
+	public function save_form()
+	{
+
+        if ($this->insert_model->insert_form() == true) {
+
+            $this->alert_model->alert_success();
+            redirect('main/print_report');
+
+        }else{
+            
+            $this->alert_model->alert_error();
+            redirect('main/form');
+        }
+
+	}
+
+	public function table_student_info()
+	{
+    	$data['main_content'] = 'table_student_info';	
+    	$data['query'] = $this->main_model->get_student_info();
+    	$this->load->view('template', $data);
+	}
+
+    public function print_report()
+    {
+    
+        $data['main_content'] = 'print_report';   
+        // $data['query'] = $this->main_model->get_student_info();
+        $this->load->view('template', $data);
+    }
+
 }
 
