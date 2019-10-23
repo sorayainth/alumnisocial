@@ -9,8 +9,9 @@ class Import extends CI_Controller {
         $this->load->model('import_model', 'import');
         $this->load->model('alert_model');
         $this->load->library('session');
+        $this->load->model('member_model');
 
-        // $this->member_model->checksession();
+        $this->member_model->checksession();
         
     }
       

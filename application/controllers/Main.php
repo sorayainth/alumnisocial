@@ -7,18 +7,13 @@ class Main extends CI_Controller {
     {
         parent::__construct();
         $this->load->model('main_model');
+        $this->load->model('member_model');
         $this->load->model('insert_model');
         $this->load->model('alert_model');
-        $this->load->library('session');
 
-        // $this->member_model->checksession();
+        $this->member_model->checksession();
 
     }
-
-	public function index()
-	{
-        $this->load->view('login');
-	}
 
 	public function dashboard()
 	{

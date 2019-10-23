@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,300,500,700");
+/* @import url("https://fonts.googleapis.com/css?family=Kanit:300,400,600,700"); */
+@import url("https://fonts.googleapis.com/css?family=Kanit:400,300,500,700");
 /*
  *
  *   INSPINIA - Responsive Admin Theme
@@ -37,6 +37,15 @@ h4,
 h5 {
   margin-top: 5px;
   font-weight: 600;
+}
+.text-h2 {
+  color: #1cc09f;
+}
+.mb-2 {
+  margin-bottom: 2em;
+}
+.mb-4 {
+  margin-bottom: 4em;
 }
 .nav > li > a {
   color: #a7b1c2;
@@ -1070,7 +1079,7 @@ button.dim:active:before {
   background-color: #d1dade;
   color: #5e5e5e;
   font-family: 'Kanit', sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   padding: 3px 8px;
   text-shadow: none;
 }

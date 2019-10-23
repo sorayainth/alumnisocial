@@ -20,6 +20,8 @@
     <!-- Sweet Alert -->
     <link href="<?php echo base_url('assets/css/plugins/sweetalert/sweetalert.css');?>" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+
+    <link rel="stylesheet" href="<?php echo base_url('assets/jquery.Thailand.js/dist/jquery.Thailand.min.css');?>">
 </head>
 
 <body>

@@ -64,6 +64,11 @@ class Auth extends CI_Controller
 		 		}
 				else
 				{
+					$newdata = array(
+						'sess_user' => false
+					);
+					$this->session->set_userdata($newdata);
+
 					$this->session->set_flashdata('flashSuccess',
 		            '<div class="alert alert-danger alert-dismissible fade in" role="alert">
 		            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
@@ -87,6 +92,11 @@ class Auth extends CI_Controller
                 redirect('main/form');       	
 
             } else {
+				$newdata = array(
+					'sess_user' => false
+				);
+				$this->session->set_userdata($newdata);
+
                 if ($this->member_model->checklogin() == false) {
                     $this->session->set_flashdata('flashSuccess',
                     	'<div class="alert alert-danger">คุณยังไม่มีสิทธิ์เข้าใช้งานโปรดติดต่อผู้ดูแลระบบ</div>');

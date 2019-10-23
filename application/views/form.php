@@ -10,127 +10,47 @@
                             <h5>ข้อมูลศิษย์เก่า คณะสังคมศาสตร์ มหาวิทยาลัยนเรศวร</h5>
                         </div>
                         <div class="ibox-content">
-                            <h2>
-                                กรอกข้อมูลข้อมูลศิษย์เก่า
+                            <!-- <h2>
+                                <b>กรอกข้อมูลข้อมูลศิษย์เก่า</b>
                             </h2>
                             <p>
                                 ของนิสิตคณะสังคมศาสตร์ มหาวิทยาลัยนเรศวร
-                            </p>
+                            </p> -->
 
-                            <form id="form" action="<?php echo base_url('main/save_form');?>" method="post" class="wizard-big">
-                                <h1>ที่อยู่ที่สามารถติดต่อได้</h1>
+                            <form id="form1" action="<?php echo base_url('main/save_form');?>" method="post" class="wizard-big_bk">
                                 <fieldset>
-                                    <h2>ที่อยู่ที่สามารถติดต่อได้</h2>
+                                    <h2 class="text-h2">ที่อยู่ที่สามารถติดต่อได้</h2>
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label>ที่อยู่ *</label>
-                                                <input id="address" name="address" type="text" class="form-control required">
+                                                <input id="address" name="address" type="text" class="form-control" required>
                                             </div>
                                             <div class="form-group">
                                                 <label>แขวง/ตำบล *</label>
-                                                <input id="subdistrict" name="subdistrict" type="text" class="form-control required">
+                                                <input name="subdistrict"  class="form-control" type="text" required>
                                             </div>
                                             <div class="form-group">
                                                 <label>เขต/อำเภอ *</label>
-                                                <input id="district" name="district" type="text" class="form-control required">
+				                                <input name="district" class="form-control" type="text" required>
                                             </div>
                                             <div class="form-group">
                                                 <label>จังหวัด *</label>
-                                                <select id="province" name="province" class="form-control required">
-                                                    <option>กรุณาเลือก</option>
-                                                    <option>กรุงเทพมหานคร</option>
-                                                    <option>กระบี่</option>
-                                                    <option>กาญจนบุรี</option>
-                                                    <option>กาฬสินธุ์</option>
-                                                    <option>กำแพงเพชร</option>
-                                                    <option>ขอนแก่น</option>
-                                                    <option>จันทบุรี</option>
-                                                    <option>ฉะเชิงเทรา</option>
-                                                    <option>ชลบุรี</option>
-                                                    <option>ชัยนาท</option>
-                                                    <option>ชัยภูมิ</option>
-                                                    <option>ชุมพร</option>
-                                                    <option>เชียงราย</option>
-                                                    <option>เชียงใหม่</option>
-                                                    <option>ตรัง</option>
-                                                    <option>ตราด</option>
-                                                    <option>ตาก</option>
-                                                    <option>นครนายก</option>
-                                                    <option>นครปฐม</option>
-                                                    <option>นครพนม</option>
-                                                    <option>นครราชสีมา</option>
-                                                    <option>นครศรีธรรมราช</option>
-                                                    <option>นครสวรรค์</option>
-                                                    <option>นนทบุรี</option>
-                                                    <option>นราธิวาส</option>
-                                                    <option>น่าน</option>
-                                                    <option>บึงกาฬ</option>
-                                                    <option>บุรีรัมย์</option>
-                                                    <option>ปทุมธานี</option>
-                                                    <option>ประจวบคีรีขันธ์</option>
-                                                    <option>ปราจีนบุรี</option>
-                                                    <option>ปัตตานี</option>
-                                                    <option>พระนครศรีอยุธยา</option>
-                                                    <option>พังงา</option>
-                                                    <option>พัทลุง</option>
-                                                    <option>พิจิตร</option>
-                                                    <option>พิษณุโลก</option>
-                                                    <option>เพชรบุรี</option>
-                                                    <option>เพชรบูรณ์</option>
-                                                    <option>แพร่</option>
-                                                    <option>พะเยา</option>
-                                                    <option>ภูเก็ต</option>
-                                                    <option>มหาสารคาม</option>
-                                                    <option>มุกดาหาร</option>
-                                                    <option>แม่ฮ่องสอน</option>
-                                                    <option>ยะลา</option>
-                                                    <option>ยโสธร</option>
-                                                    <option>ร้อยเอ็ด</option>
-                                                    <option>ระนอง</option>
-                                                    <option>ระยอง</option>
-                                                    <option>ราชบุรี</option>
-                                                    <option>ลพบุรี</option>
-                                                    <option>ลำปาง</option>
-                                                    <option>ลำพูน</option>
-                                                    <option>เลย</option>
-                                                    <option>ศรีสะเกษ</option>
-                                                    <option>สกลนคร</option>
-                                                    <option>สงขลา</option>
-                                                    <option>สตูล</option>
-                                                    <option>สมุทรปราการ</option>
-                                                    <option>สมุทรสงคราม</option>
-                                                    <option>สมุทรสาคร</option>
-                                                    <option>สระแก้ว</option>
-                                                    <option>สระบุรี</option>
-                                                    <option>สิงห์บุรี</option>
-                                                    <option>สุโขทัย</option>
-                                                    <option>สุพรรณบุรี</option>
-                                                    <option>สุราษฎร์ธานี</option>
-                                                    <option>สุรินทร์</option>
-                                                    <option>หนองคาย</option>
-                                                    <option>หนองบัวลำภู</option>
-                                                    <option>อ่างทอง</option>
-                                                    <option>อุดรธานี</option>
-                                                    <option>อุทัยธานี</option>
-                                                    <option>อุตรดิตถ์</option>
-                                                    <option>อุบลราชธานี</option>
-                                                    <option>อำนาจเจริญ</option>
-                                                </select>
+                                                <input name="province" class="form-control" type="text" required>
                                             </div>
                                             <div class="form-group">
                                                 <label>รหัสไปรษณีย์ *</label>
-                                                <input id="zipcode" name="zipcode" type="text" class="form-control required">
+                                                <input name="zipcode" class="form-control" type="text" required>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label>เบอร์มือถือ *</label>
-                                                <input id="telephone" name="telephone" type="text" class="form-control required">
+                                                <input id="telephone" name="telephone" type="text" class="form-control" required>
                                             </div>
                                             <div class="form-group">
                                                 <label>Email *</label>
-                                                <input id="email" name="email" type="text" class="form-control required email">
+                                                <input id="email" name="email" type="text" class="form-control email" required>
                                             </div>
                                             <div class="form-group">
                                                 <label>ID Line</label>
@@ -145,14 +65,13 @@
                                     </div>
 
                                 </fieldset>
-                                <h1>ประวัติการศึกษา</h1>
                                 <fieldset>
-                                    <h2>ประวัติการศึกษา</h2>
+                                    <h2 class="text-h2">ประวัติการศึกษา</h2>
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label>ระดับการศึกษา *</label>
-                                                <select id="education" name="education" class="form-control required">
+                                                <select id="education" name="education" class="form-control" required>
                                                     <option>ปริญญาตรี</option>
                                                     <option>ปริญญาโท</option>
                                                     <option>ปริญญาเอก</option>
@@ -160,7 +79,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>ปีการศึกษาที่จบ *</label>
-                                                <select id="year_success" name="year_success" class="form-control required">
+                                                <select id="year_success" name="year_success" class="form-control" required>
                                                     <?php $year = date('Y')+541; for ($i=$year; $i < ($year+2); $i++) { ?>
                                                        <option><?php echo $i;?></option>
                                                     <?php } ?>
@@ -169,25 +88,32 @@
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <label>ภาควิชา *</label>
-                                                <input id="department" name="department" type="text" value="<?php echo $this->session->userdata('Department');?>" class="form-control required">
+                                                <label>หลักสูตร *</label>
+                                                <!-- <input id="department" name="department" type="text" value="<?php //echo $this->session->userdata('Department');?>" class="form-control"> -->
+                                                <select id="department" name="department" class="form-control" required>
+                                                    <option value="">กรุณาเลือก</option>
+                                                    <option value="หลักสูตรวิทยาศาสตรบัณฑิต">หลักสูตรวิทยาศาสตรบัณฑิต</option>
+                                                    <option value="หลักสูตรศิลปศาสตรบัณฑิต">หลักสูตรศิลปศาสตรบัณฑิต</option>
+                                                    <option value="หลักสูตรศิลปศาสตรมหาบัณฑิต">หลักสูตรศิลปศาสตรมหาบัณฑิต</option>
+                                                    <option value="หลักสูตรรัฐศาสตรมหาบัณฑิต">หลักสูตรรัฐศาสตรมหาบัณฑิต</option>
+                                                    <option value="หลักสูตรปรัชญาดุษฎีบัณฑิต">หลักสูตรปรัชญาดุษฎีบัณฑิต</option>
+                                                </select>
                                             </div>
                                             <div class="form-group">
                                                 <label>สาขา *</label>
-                                                <input id="major" name="major" type="text" value="<?php echo $this->session->userdata('Major');?>" class="form-control">
+                                                <input id="major" name="major" type="text" value="<?php echo $this->session->userdata('Major');?>" class="form-control" required>
                                             </div>
                                         </div>
                                     </div>
                                 </fieldset>
 
-                                <h1>ประวัติการทำงาน</h1>
                                 <fieldset>
-                                <h2>ประวัติการทำงาน</h2>
+                                <h2 class="text-h2">ประวัติการทำงาน</h2>
                                      <div class="row" id="chkstatus">
-                                        <div class="col-lg-12">
+                                        <div class="col-lg-12 mb-4">
                                             <div class="form-group">
                                                 <label>สถานะ *</label>
-                                                <select id="typejob" name="typejob" class="form-control required" onChange="chkstatus(this.value);">
+                                                <select id="typejob" name="typejob" class="form-control" onChange="chkstatus(this.value);" required>
                                                     <option value="">กรุณาเลือก</option>
                                                     <option value="ทำงาน">ทำงาน</option>
                                                     <option value="ศึกษาต่อ">ศึกษาต่อ</option>
@@ -209,7 +135,17 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>ประเภทงาน</label>
-                                                <input id="jobdescription" name="jobdescription" type="text" class="form-control">
+                                                <select id="jobdescription" name="jobdescription" class="form-control">
+                                                    <option value="0">กรุณาเลือก</option>
+                                                    <option value="1">รับราชการ/พนักงานราชการ/พนักงานของรัฐ</option>
+                                                    <option value="2">พนักงานเอกชน/ลูกจ้างเอกชน</option>
+                                                    <option value="3">สมาคม/มูลนิธิ/เครือข่ายจิตอาสา</option>
+                                                    <option value="4">งานอิสระ</option>
+                                                    <option value="5">รัฐวิสาหกิจ</option>
+                                                    <option value="6">เกษตรกร</option>
+                                                    <option value="7">รับจ้าง</option>
+                                                    <option value="8">องค์กรทางการเมือง</option>
+                                                </select>
                                             </div>
                                             <div class="form-group">
                                                 <label>ปีที่เริ่มงาน *</label>
@@ -227,98 +163,19 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>แขวง/ตำบล *</label>
-                                                <input id="subdistrict_company" name="subdistrict_company" type="text" class="form-control">
+                                                <input name="subdistrict_company"  class="form-control" type="text">
                                             </div>
                                             <div class="form-group">
                                                 <label>เขต/อำเภอ *</label>
-                                                <input id="district_company" name="district_company" type="text" class="form-control">
+				                                <input name="district_company" class="form-control" type="text">
                                             </div>
                                             <div class="form-group">
                                                 <label>จังหวัด *</label>
-                                                <select id="province_company" name="province_company" class="form-control">
-                                                    <option>กรุณาเลือก</option>
-                                                    <option>กรุงเทพมหานคร</option>
-                                                    <option>กระบี่</option>
-                                                    <option>กาญจนบุรี</option>
-                                                    <option>กาฬสินธุ์</option>
-                                                    <option>กำแพงเพชร</option>
-                                                    <option>ขอนแก่น</option>
-                                                    <option>จันทบุรี</option>
-                                                    <option>ฉะเชิงเทรา</option>
-                                                    <option>ชลบุรี</option>
-                                                    <option>ชัยนาท</option>
-                                                    <option>ชัยภูมิ</option>
-                                                    <option>ชุมพร</option>
-                                                    <option>เชียงราย</option>
-                                                    <option>เชียงใหม่</option>
-                                                    <option>ตรัง</option>
-                                                    <option>ตราด</option>
-                                                    <option>ตาก</option>
-                                                    <option>นครนายก</option>
-                                                    <option>นครปฐม</option>
-                                                    <option>นครพนม</option>
-                                                    <option>นครราชสีมา</option>
-                                                    <option>นครศรีธรรมราช</option>
-                                                    <option>นครสวรรค์</option>
-                                                    <option>นนทบุรี</option>
-                                                    <option>นราธิวาส</option>
-                                                    <option>น่าน</option>
-                                                    <option>บึงกาฬ</option>
-                                                    <option>บุรีรัมย์</option>
-                                                    <option>ปทุมธานี</option>
-                                                    <option>ประจวบคีรีขันธ์</option>
-                                                    <option>ปราจีนบุรี</option>
-                                                    <option>ปัตตานี</option>
-                                                    <option>พระนครศรีอยุธยา</option>
-                                                    <option>พังงา</option>
-                                                    <option>พัทลุง</option>
-                                                    <option>พิจิตร</option>
-                                                    <option>พิษณุโลก</option>
-                                                    <option>เพชรบุรี</option>
-                                                    <option>เพชรบูรณ์</option>
-                                                    <option>แพร่</option>
-                                                    <option>พะเยา</option>
-                                                    <option>ภูเก็ต</option>
-                                                    <option>มหาสารคาม</option>
-                                                    <option>มุกดาหาร</option>
-                                                    <option>แม่ฮ่องสอน</option>
-                                                    <option>ยะลา</option>
-                                                    <option>ยโสธร</option>
-                                                    <option>ร้อยเอ็ด</option>
-                                                    <option>ระนอง</option>
-                                                    <option>ระยอง</option>
-                                                    <option>ราชบุรี</option>
-                                                    <option>ลพบุรี</option>
-                                                    <option>ลำปาง</option>
-                                                    <option>ลำพูน</option>
-                                                    <option>เลย</option>
-                                                    <option>ศรีสะเกษ</option>
-                                                    <option>สกลนคร</option>
-                                                    <option>สงขลา</option>
-                                                    <option>สตูล</option>
-                                                    <option>สมุทรปราการ</option>
-                                                    <option>สมุทรสงคราม</option>
-                                                    <option>สมุทรสาคร</option>
-                                                    <option>สระแก้ว</option>
-                                                    <option>สระบุรี</option>
-                                                    <option>สิงห์บุรี</option>
-                                                    <option>สุโขทัย</option>
-                                                    <option>สุพรรณบุรี</option>
-                                                    <option>สุราษฎร์ธานี</option>
-                                                    <option>สุรินทร์</option>
-                                                    <option>หนองคาย</option>
-                                                    <option>หนองบัวลำภู</option>
-                                                    <option>อ่างทอง</option>
-                                                    <option>อุดรธานี</option>
-                                                    <option>อุทัยธานี</option>
-                                                    <option>อุตรดิตถ์</option>
-                                                    <option>อุบลราชธานี</option>
-                                                    <option>อำนาจเจริญ</option>
-                                                </select>
+                                                <input name="province_company" class="form-control" type="text">
                                             </div>
                                             <div class="form-group">
                                                 <label>รหัสไปรษณีย์ *</label>
-                                                <input id="zipcode_company" name="zipcode_company" type="text" class="form-control">
+                                                <input name="zipcode_company" class="form-control" type="text">
                                             </div>
                                         </div>
                                     </div>
@@ -416,98 +273,19 @@
                                         <div class="col-lg-6">
                                            <div class="form-group">
                                                 <label>แขวง/ตำบล *</label>
-                                                <input id="subdistrict_owner" name="subdistrict_owner" type="text" class="form-control">
+                                                <input name="subdistrict_owner" type="text" class="form-control">
                                             </div>
                                             <div class="form-group">
                                                 <label>เขต/อำเภอ</label>
-                                                <input id="district_owner" name="district_owner" type="text" class="form-control">
+                                                <input name="district_owner" type="text" class="form-control">
                                             </div>
                                             <div class="form-group">
                                                 <label>จังหวัด *</label>
-                                                <select id="province_owner" name="province_owner" class="form-control required">
-                                                    <option>กรุณาเลือก</option>
-                                                    <option>กรุงเทพมหานคร</option>
-                                                    <option>กระบี่</option>
-                                                    <option>กาญจนบุรี</option>
-                                                    <option>กาฬสินธุ์</option>
-                                                    <option>กำแพงเพชร</option>
-                                                    <option>ขอนแก่น</option>
-                                                    <option>จันทบุรี</option>
-                                                    <option>ฉะเชิงเทรา</option>
-                                                    <option>ชลบุรี</option>
-                                                    <option>ชัยนาท</option>
-                                                    <option>ชัยภูมิ</option>
-                                                    <option>ชุมพร</option>
-                                                    <option>เชียงราย</option>
-                                                    <option>เชียงใหม่</option>
-                                                    <option>ตรัง</option>
-                                                    <option>ตราด</option>
-                                                    <option>ตาก</option>
-                                                    <option>นครนายก</option>
-                                                    <option>นครปฐม</option>
-                                                    <option>นครพนม</option>
-                                                    <option>นครราชสีมา</option>
-                                                    <option>นครศรีธรรมราช</option>
-                                                    <option>นครสวรรค์</option>
-                                                    <option>นนทบุรี</option>
-                                                    <option>นราธิวาส</option>
-                                                    <option>น่าน</option>
-                                                    <option>บึงกาฬ</option>
-                                                    <option>บุรีรัมย์</option>
-                                                    <option>ปทุมธานี</option>
-                                                    <option>ประจวบคีรีขันธ์</option>
-                                                    <option>ปราจีนบุรี</option>
-                                                    <option>ปัตตานี</option>
-                                                    <option>พระนครศรีอยุธยา</option>
-                                                    <option>พังงา</option>
-                                                    <option>พัทลุง</option>
-                                                    <option>พิจิตร</option>
-                                                    <option>พิษณุโลก</option>
-                                                    <option>เพชรบุรี</option>
-                                                    <option>เพชรบูรณ์</option>
-                                                    <option>แพร่</option>
-                                                    <option>พะเยา</option>
-                                                    <option>ภูเก็ต</option>
-                                                    <option>มหาสารคาม</option>
-                                                    <option>มุกดาหาร</option>
-                                                    <option>แม่ฮ่องสอน</option>
-                                                    <option>ยะลา</option>
-                                                    <option>ยโสธร</option>
-                                                    <option>ร้อยเอ็ด</option>
-                                                    <option>ระนอง</option>
-                                                    <option>ระยอง</option>
-                                                    <option>ราชบุรี</option>
-                                                    <option>ลพบุรี</option>
-                                                    <option>ลำปาง</option>
-                                                    <option>ลำพูน</option>
-                                                    <option>เลย</option>
-                                                    <option>ศรีสะเกษ</option>
-                                                    <option>สกลนคร</option>
-                                                    <option>สงขลา</option>
-                                                    <option>สตูล</option>
-                                                    <option>สมุทรปราการ</option>
-                                                    <option>สมุทรสงคราม</option>
-                                                    <option>สมุทรสาคร</option>
-                                                    <option>สระแก้ว</option>
-                                                    <option>สระบุรี</option>
-                                                    <option>สิงห์บุรี</option>
-                                                    <option>สุโขทัย</option>
-                                                    <option>สุพรรณบุรี</option>
-                                                    <option>สุราษฎร์ธานี</option>
-                                                    <option>สุรินทร์</option>
-                                                    <option>หนองคาย</option>
-                                                    <option>หนองบัวลำภู</option>
-                                                    <option>อ่างทอง</option>
-                                                    <option>อุดรธานี</option>
-                                                    <option>อุทัยธานี</option>
-                                                    <option>อุตรดิตถ์</option>
-                                                    <option>อุบลราชธานี</option>
-                                                    <option>อำนาจเจริญ</option>
-                                                </select>
+                                                <input name="province_owner" type="text" class="form-control">
                                             </div>
                                             <div class="form-group">
                                                 <label>รหัสไปรษณีย์ *</label>
-                                                <input id="zipcode_owner" name="zipcode_owner" type="text" class="form-control">
+                                                <input name="zipcode_owner" type="text" class="form-control">
                                             </div>
                                         </div>
                                     </div>
@@ -530,11 +308,12 @@
                                     </div>
                                 </fieldset>
 
-                                <h1>Finish</h1>
                                 <fieldset>
-                                    <h2>Terms and Conditions</h2>
-                                    <input id="acceptTerms" name="acceptTerms" type="checkbox" class="required"> 
+                                    <h3>Terms and Conditions</h3>
+                                    <input id="acceptTerms" name="acceptTerms" type="checkbox" class="" required> 
                                     <label for="acceptTerms">ขอยืนยันว่าข้อมูลนี้เป็นความจริง</label>
+
+                                    <button type="submit" class="btn btn-success pull-right">บันทึก</button>
                                 </fieldset>
                             </form>
                         </div>
@@ -543,3 +322,65 @@
 
                 </div>
             </div>
+    <!-- AutoProvince -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="../assets/jquery.Thailand.js/dependencies/JQL.min.js"></script>
+<script type="text/javascript" src="../assets/jquery.Thailand.js/dependencies/typeahead.bundle.js"></script>
+<script type="text/javascript" src="../assets/jquery.Thailand.js/dist/jquery.Thailand.min.js"></script>
+<script type="text/javascript"> 
+
+        $.Thailand({
+            database: '../assets/jquery.Thailand.js/database/db.json', 
+
+            $district: $('#form1 [name="subdistrict"]'),
+            $amphoe: $('#form1 [name="district"]'),
+            $province: $('#form1 [name="province"]'),
+            $zipcode: $('#form1 [name="zipcode"]'),
+
+            onDataFill: function(data){
+                console.info('Data Filled', data);
+            },
+
+            onLoad: function(){
+                console.info('Autocomplete is ready!');
+                $('#loader, #form').toggle();
+            }
+        });
+
+        $.Thailand({
+            database: '../assets/jquery.Thailand.js/database/db.json', 
+
+            $district: $('#form1 [name="subdistrict_company"]'),
+            $amphoe: $('#form1 [name="district_company"]'),
+            $province: $('#form1 [name="province_company"]'),
+            $zipcode: $('#form1 [name="zipcode_company"]'),
+
+            onDataFill: function(data){
+                console.info('Data Filled', data);
+            },
+
+            onLoad: function(){
+                console.info('Autocomplete is ready!');
+                $('#loader, #form').toggle();
+            }
+        });
+
+        $.Thailand({
+            database: '../assets/jquery.Thailand.js/database/db.json', 
+
+            $district: $('#form1 [name="subdistrict_owner"]'),
+            $amphoe: $('#form1 [name="district_owner"]'),
+            $province: $('#form1 [name="province_owner"]'),
+            $zipcode: $('#form1 [name="zipcode_owner"]'),
+
+            onDataFill: function(data){
+                console.info('Data Filled', data);
+            },
+
+            onLoad: function(){
+                console.info('Autocomplete is ready!');
+                $('#loader, #form').toggle();
+            }
+        });
+
+    </script>

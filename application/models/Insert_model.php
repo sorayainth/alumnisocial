@@ -7,6 +7,11 @@ class Insert_model extends CI_Model
 	public function insert_form()
 	{
 
+		$this->db->select('Student_id')
+				 ->from('data_student')
+				 ->where('Student_id', $this->session->userdata('username'));
+		$query = $this->db->get();
+
 		$data =  array(
 
 			// 'Firstname'  	=> $this->input->post('firstname'),
@@ -36,6 +41,7 @@ class Insert_model extends CI_Model
 
 		$data_company = array(
 
+			'Student_id'	=> $this->session->userdata('username'),
 			'Company'  			=> $this->input->post('company'),
 			'Position'  		=> $this->input->post('position'),
 			'Jobdescription'  	=> $this->input->post('jobdescription'),
@@ -50,6 +56,7 @@ class Insert_model extends CI_Model
 
 		$data_education = array(
 
+			'Student_id'	=> $this->session->userdata('username'),
 			'University'	=> $this->input->post('university'),
 			'Level_next'	=> $this->input->post('level_next'),
 			'Faculty_next'	=> $this->input->post('faculty_next'),
@@ -61,6 +68,7 @@ class Insert_model extends CI_Model
 
 		$data_business = array(
 
+			'Student_id'	=> $this->session->userdata('username'),
 			'Company_owner'		=> $this->input->post('company_owner'),
 			'Format_owner'		=> $this->input->post('format_owner'),
 			'Address_owner'		=> $this->input->post('address_owner'),
@@ -72,27 +80,55 @@ class Insert_model extends CI_Model
 		);
 
 		$data_null = array(
-
+			
+			'Student_id'	=> $this->session->userdata('username'),
 			'Plan'		=> $this->input->post('plan'),
 			'Other'		=> $this->input->post('other')
 
 		);
 
-		if ($this->input->post('typejob') == 'ทำงาน') {
-			$this->db->insert('job', $data_company);
+		if ($query->num_rows() <= 0) {
 
-		}elseif ($this->input->post('typejob') == 'ศึกษาต่อ') {
-			$this->db->insert('study', $data_education);
+			if ($this->input->post('typejob') == 'ทำงาน') {
+				$this->db->insert('job', $data_company);
+	
+			}elseif ($this->input->post('typejob') == 'ศึกษาต่อ') {
+				$this->db->insert('study', $data_education);
+	
+			}elseif ($this->input->post('typejob') == 'ธุรกิจส่วนตัว') {
+				$this->db->insert('business', $data_business);
+	
+			}elseif ($this->input->post('typejob') == 'ยังไม่ได้ทำงาน') {
+				$this->db->insert('nulljob', $data_null);
+	
+			}
+	
+			$query = $this->db->insert('data_student', $data);
+			
+		}else{
 
-		}elseif ($this->input->post('typejob') == 'ธุรกิจส่วนตัว') {
-			$this->db->insert('business', $data_business);
-
-		}elseif ($this->input->post('typejob') == 'ยังไม่ได้ทำงาน') {
-			$this->db->insert('nulljob', $data_null);
+			if ($this->input->post('typejob') == 'ทำงาน') {
+				$this->db->where('Student_id', $this->session->userdata('username'));
+				$this->db->update('job', $data_company);
+	
+			}elseif ($this->input->post('typejob') == 'ศึกษาต่อ') {
+				$this->db->where('Student_id', $this->session->userdata('username'));
+				$this->db->update('study', $data_education);
+	
+			}elseif ($this->input->post('typejob') == 'ธุรกิจส่วนตัว') {
+				$this->db->where('Student_id', $this->session->userdata('username'));
+				$this->db->update('business', $data_business);
+	
+			}elseif ($this->input->post('typejob') == 'ยังไม่ได้ทำงาน') {
+				$this->db->where('Student_id', $this->session->userdata('username'));
+				$this->db->update('nulljob', $data_null);
+	
+			}
+			$this->db->where('Student_id', $this->session->userdata('username'));
+			$query = $this->db->update('data_student', $data);
 
 		}
 
-		$query = $this->db->insert('data_student', $data);
 
 		if ($query) {
 			return true;
