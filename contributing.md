@@ -20,3 +20,6 @@ $config['proxy_user'] = 'YOU USERNAME NU-NET@nu.local';
 
 // proxy pass: the password for the proxy_user
 $config['proxy_pass'] = 'YOU PASSWORD NU-NET';
+
+๊Upgrad version 1.1.0
+เพิ่ม field ใน Database Table: data_student ชื่อ field "Activity" type "text"

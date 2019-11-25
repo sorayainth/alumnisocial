@@ -35,6 +35,7 @@ class Insert_model extends CI_Model
 			'Year_success'  => $this->input->post('year_success'),
 			'Department'  	=> $this->input->post('department'),
 			'Major'  		=> $this->input->post('major'),
+			'Activity'		=> $this->input->post('activity'),
 			'Typejob'		=> $this->input->post('typejob'),
 
 		);

@@ -10,6 +10,69 @@
         </div>
         </div>
 
+        <!-- AutoProvince -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="../assets/jquery.Thailand.js/dependencies/JQL.min.js"></script>
+<script type="text/javascript" src="../assets/jquery.Thailand.js/dependencies/typeahead.bundle.js"></script>
+<script type="text/javascript" src="../assets/jquery.Thailand.js/dist/jquery.Thailand.min.js"></script>
+<script type="text/javascript"> 
+
+        $.Thailand({
+            database: '../assets/jquery.Thailand.js/database/db.json', 
+
+            $district: $('#form1 [name="subdistrict"]'),
+            $amphoe: $('#form1 [name="district"]'),
+            $province: $('#form1 [name="province"]'),
+            $zipcode: $('#form1 [name="zipcode"]'),
+
+            onDataFill: function(data){
+                console.info('Data Filled', data);
+            },
+
+            onLoad: function(){
+                console.info('Autocomplete is ready!');
+                $('#loader, #form').toggle();
+            }
+        });
+
+        $.Thailand({
+            database: '../assets/jquery.Thailand.js/database/db.json', 
+
+            $district: $('#form1 [name="subdistrict_company"]'),
+            $amphoe: $('#form1 [name="district_company"]'),
+            $province: $('#form1 [name="province_company"]'),
+            $zipcode: $('#form1 [name="zipcode_company"]'),
+
+            onDataFill: function(data){
+                console.info('Data Filled', data);
+            },
+
+            onLoad: function(){
+                console.info('Autocomplete is ready!');
+                $('#loader, #form').toggle();
+            }
+        });
+
+        $.Thailand({
+            database: '../assets/jquery.Thailand.js/database/db.json', 
+
+            $district: $('#form1 [name="subdistrict_owner"]'),
+            $amphoe: $('#form1 [name="district_owner"]'),
+            $province: $('#form1 [name="province_owner"]'),
+            $zipcode: $('#form1 [name="zipcode_owner"]'),
+
+            onDataFill: function(data){
+                console.info('Data Filled', data);
+            },
+
+            onLoad: function(){
+                console.info('Autocomplete is ready!');
+                $('#loader, #form').toggle();
+            }
+        });
+
+    </script>
+    
     <!-- Mainly scripts -->
     <!-- <script src="<?php //echo base_url('assets/js/jquery-3.1.1.min.js');?>"></script> -->
     <script src="<?php echo base_url('assets/js/bootstrap.min.js');?>"></script>

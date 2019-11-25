@@ -308,6 +308,15 @@
                                     </div>
                                 </fieldset>
 
+                                <h2 class="text-h2">อยากทำกิจกรรมอะไรร่วมกับคณะกรรมการศิษย์เก่าฯ</h2>
+                                     <div class="row" id="chkstatus">
+                                        <div class="col-lg-12 mb-4">
+                                            <div class="form-group">
+                                                <textarea class="form-control" name="activity" required></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
                                 <fieldset>
                                     <h3>Terms and Conditions</h3>
                                     <input id="acceptTerms" name="acceptTerms" type="checkbox" class="" required> 
@@ -322,65 +331,3 @@
 
                 </div>
             </div>
-    <!-- AutoProvince -->
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="../assets/jquery.Thailand.js/dependencies/JQL.min.js"></script>
-<script type="text/javascript" src="../assets/jquery.Thailand.js/dependencies/typeahead.bundle.js"></script>
-<script type="text/javascript" src="../assets/jquery.Thailand.js/dist/jquery.Thailand.min.js"></script>
-<script type="text/javascript"> 
-
-        $.Thailand({
-            database: '../assets/jquery.Thailand.js/database/db.json', 
-
-            $district: $('#form1 [name="subdistrict"]'),
-            $amphoe: $('#form1 [name="district"]'),
-            $province: $('#form1 [name="province"]'),
-            $zipcode: $('#form1 [name="zipcode"]'),
-
-            onDataFill: function(data){
-                console.info('Data Filled', data);
-            },
-
-            onLoad: function(){
-                console.info('Autocomplete is ready!');
-                $('#loader, #form').toggle();
-            }
-        });
-
-        $.Thailand({
-            database: '../assets/jquery.Thailand.js/database/db.json', 
-
-            $district: $('#form1 [name="subdistrict_company"]'),
-            $amphoe: $('#form1 [name="district_company"]'),
-            $province: $('#form1 [name="province_company"]'),
-            $zipcode: $('#form1 [name="zipcode_company"]'),
-
-            onDataFill: function(data){
-                console.info('Data Filled', data);
-            },
-
-            onLoad: function(){
-                console.info('Autocomplete is ready!');
-                $('#loader, #form').toggle();
-            }
-        });
-
-        $.Thailand({
-            database: '../assets/jquery.Thailand.js/database/db.json', 
-
-            $district: $('#form1 [name="subdistrict_owner"]'),
-            $amphoe: $('#form1 [name="district_owner"]'),
-            $province: $('#form1 [name="province_owner"]'),
-            $zipcode: $('#form1 [name="zipcode_owner"]'),
-
-            onDataFill: function(data){
-                console.info('Data Filled', data);
-            },
-
-            onLoad: function(){
-                console.info('Autocomplete is ready!');
-                $('#loader, #form').toggle();
-            }
-        });
-
-    </script>

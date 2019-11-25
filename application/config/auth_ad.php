@@ -44,10 +44,10 @@ $config['ad_domain'] = 'nu.local';
 $config['start_ou'] = '';
 
 // proxy_user: the (distinguished) username of the user that does the querying (AD generally does not allow anonymous binds) 
-$config['proxy_user'] = 'YOU USERNAME NU-NET@nu.local';
+$config['proxy_user'] = 'sorayas@nu.local';
 
 // proxy pass: the password for the proxy_user
-$config['proxy_pass'] = 'YOU PASSWORD NU-NET';
+$config['proxy_pass'] = 'bsorzeed07052534nu';
 
 /* End of file auth_ad.php */
 /* Location: ./application/config/auth_ad.php */
