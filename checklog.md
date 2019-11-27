@@ -15,3 +15,6 @@
 - AutoProvince
 - Fix bug security
 
+# 1.2.0
+- fix bug menu
+- new field

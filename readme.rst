@@ -27,3 +27,7 @@ $config['base_url'] = 'http://localhost:8888/alumnisocial/';
 
 4. Edit Permission 777
 folder files, ci_session
+
+---------------------------------------------------
+๊Upgrad version 1.1.0
+เพิ่ม field ใน Database Table: data_student ชื่อ field "Activity" type "text"
