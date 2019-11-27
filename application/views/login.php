@@ -40,7 +40,7 @@
 
                 <small><!-- ติดต่อเรา --></small>
                 <p class="text-muted text-center"><small>ติดต่อเรา</small></p>
-                <a class="btn btn-sm btn-white btn-block" href="https://www.facebook.com/%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B8%81%E0%B8%B4%E0%B8%88%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B8%B4%E0%B8%AA%E0%B8%B4%E0%B8%95-%E0%B8%84%E0%B8%93%E0%B8%B0%E0%B8%AA%E0%B8%B1%E0%B8%87%E0%B8%84%E0%B8%A1%E0%B8%A8%E0%B8%B2%E0%B8%AA%E0%B8%95%E0%B8%A3%E0%B9%8C-%E0%B8%A1%E0%B8%99%E0%B9%80%E0%B8%A3%E0%B8%A8%E0%B8%A7%E0%B8%A3-355876441172800/" target="_black"><i class="fa fa-facebook-square"></i> งานกิจการนิสิตและศิษย์เก่าสัมพันธ์ คณะสังคมศาสตร์</a>
+                <a class="btn btn-sm btn-white btn-block" href="https://line.me/ti/g2/BmdMwFOvcIwAhopnaqWo8A?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_black"><i class="fa fa-line"></i> Line open chat</a>
             </form>
             <!-- <p class="m-t"> <small>Inspinia we app framework base on Bootstrap 3 &copy; 2014</small> </p> -->
         </div>
